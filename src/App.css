@@ -1,0 +1,454 @@
+
+.App{
+    width: 100vw;
+    height: 100vh;
+    background: #faf9fb;
+    overflow-x: hidden;
+}
+
+.App::-webkit-scrollbar{
+    display: none;
+}
+
+
+/*Header section start here*/
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    height: 60px;
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.logo{
+    min-width: 40px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+.inputBox{
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 8px 15px;
+    width: 120px;
+}
+
+.inputBox .searchIcon {
+    color: #787aB4;
+    font-size: 20px;
+}
+
+.inputBox input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #787aB4;
+    padding-left: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.shoppingCart{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.shoppingCart .cart{
+    font-size: 30px;
+    color: #373848;
+}
+
+.shoppingCart .cartContent{
+    width: 20px;
+    height: 20px;
+    background: #f8901c;
+    border-radius: 100%;
+    min-width: 20px;
+    min-height: 20px;
+    position: absolute;
+    top: -8px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shoppingCart .cartContent p{
+    font-weight: 500;
+    color: #fff;
+}
+
+.profileContainer{
+    display: flex;
+    align-items: center;
+
+}
+.profileContainer .imgBox{
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 100vw;
+    background: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.profileContainer .imgBox .profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profileContainer .userName{
+    font-size: 16px;
+    margin-left: 8px;
+    font-weight: 500;
+    display: none;
+    align-items: center;
+}
+.toggleIcon{
+    transform: rotate(90deg);
+}
+.toggleIcon .toggle{
+    color: #373848;
+    font-size: 34px;
+}
+/* Bottom Menu styles*/
+
+.bottomMenu{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    background: #d5d5d5;
+    border-radius: 25px 25px 0px 0px; 
+    z-index: 101;
+}
+.bottomMenu ul{
+    display: flex;
+
+}
+.bottomMenu ul li{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+.bottomMenu ul li a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 500;
+}
+.bottomMenu ul li a .icons{
+    position: relative;
+    display: block;
+    line-height: 70px;
+    text-align: center;
+    transition: 0.5s;
+}
+.bottomMenu ul li a .icons .MuiSvgIcon-root{
+    font-size: 26px;
+    color: #373848;
+
+}
+.bottomMenu ul li.active a .icons{
+    transform: translateY(-26px);
+
+}
+
+.bottomMenu ul li.active a .icons .MuiSvgIcon-root{
+    color: #faf9fb;
+    transition: 0.5s;
+}
+
+
+.indicator{
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background: #f8901c;
+    border-radius: 10vw;
+    top: -50%;
+    border: 6px solid #faf9fb;
+    transition: 0.5s;
+}
+.indicator::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    border-top-right-radius: 18px;
+    box-shadow: 0px -10px 0 0 #faf9fb;
+}
+.indicator::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    border-top-left-radius: 18px;
+    box-shadow: 0px -10px 0 0 #faf9fb;
+}
+.bottomMenu ul li:nth-child(1).active ~ .indicator{
+    transform: translateX(calc(60px * 0));
+}
+.bottomMenu ul li:nth-child(2).active ~ .indicator{
+    transform: translateX(calc(60px * 1));
+}
+.bottomMenu ul li:nth-child(3).active ~ .indicator{
+    transform: translateX(calc(60px * 2));
+}
+.bottomMenu ul li:nth-child(4).active ~ .indicator{
+    transform: translateX(calc(60px * 3));
+}
+.bottomMenu ul li:nth-child(5).active ~ .indicator{
+    transform: translateX(calc(60px * 4));
+}
+.bottomMenu ul li:nth-child(6).active ~ .indicator{
+    transform: translateX(calc(60px * 5));
+}
+
+/* Main section Styles*/
+main{
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+}
+.mainContainer{
+    width: 100%;
+    height: auto;
+    background: #faf9fb;
+    padding: 10px;
+    padding-bottom: 100px;
+}
+
+.mainContainer .banner{
+    width: 100%;
+    height: 130px;
+    border-radius: 10px; 
+    background: url(../src/img/payment.webp) no-repeat center;
+    background-size: cover;
+    position: relative;
+    text-align: start;
+    padding: 0px 10px;
+
+}
+
+.delivaryPic{
+    position: absolute;
+    right: -60px;
+    bottom: -10px;
+    width: 240px;
+}
+
+.bannerContent{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.bannerContent h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: #2a2b3c;
+
+}
+.bannerContent p{
+    font-size: 14px;
+    width: 200px;
+    color: #989594;
+    margin: 5px 0;
+}
+
+.bannerContent p span{
+    color: #f8901c;
+    font-weight: 600;
+}
+
+.bannerContent a{
+    background: #f8901c;
+    padding: 5px 15px;
+    border-radius: 100vh;
+    color: #faf9fb;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.bannerContent a:hover{
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+}
+
+
+/*dishContainer*/
+
+.dishContainer{
+    width: 100%;
+    padding: 10px 0;
+}
+.menuCard{
+    width: 100%;
+}
+
+.menuContainer, .viewAll{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menuContainer h3{
+    font-size: 16px;
+    font-weight: 600;
+    color: #2a2b3c;
+}
+
+
+.mainContainer .viewAll{
+    font-size: 12px;
+    color: #f8901c;
+    font-weight: 400;
+}
+
+.mainContainer .viewAll i{
+    background: #f8901c;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.mainContainer .viewAll i .MuiSvgIcon-root{
+    font-size: 16px;
+    color: #faf9fb;
+}
+
+.rowContainer{
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+
+.rowContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.rowMenuContainer{
+    width: 80px;
+    min-width: 80px;
+    height: 100px;
+    border-radius: 10px;
+    background: #faf9fb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+    cursor: pointer;
+    margin-right: 12px;
+}
+.rowMenuContainer .imgBox{
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 100vw;
+    background: #f8901c;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.rowMenuContainer .imgBox img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.rowMenuContainer{
+    color: #f8901c;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+.rowMenuContainer h3{
+    color: #fff;
+}
+.rowMenuContainer:hover, .rowMenuContainer.active{
+    background: #f8901c;
+}
+.rowMenuContainer:hover .imgBox, .rowMenuContainer.active .imgBox{
+    background: #fff;
+}
+.rowMenuContainer:hover .imgBox img, 
+.rowMenuContainer.active .imgBox img{
+    width: 80%;
+    height: 80%;
+    transition: 0.5s;
+}
+.rowMenuContainer:hover .h3,
+.rowMenuContainer.active .h3{
+    color: #fff;
+}
+.rowMenuContainer .loadMenu {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #f8901c;
+    transition: 0.5s;
+}
+.rowMenuContainer .loadMenu .MuiSvgIcon-root{
+    font-size: 18px;
+    flood-color: #faf9fb;
+}
+.rowMenuContainer:hover .loadMenu,
+.rowMenuContainer.active .loadMenu{
+    font-size: 18px;
+    background: #faf9fb;
+}
