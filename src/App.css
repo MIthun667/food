@@ -409,14 +409,11 @@ main{
     height: 100%;
 }
 .rowMenuContainer{
-    color: #f8901c;
     font-size: 14px;
     font-weight: 500;
     transition: 0.5s;
 }
-.rowMenuContainer h3{
-    color: #fff;
-}
+
 .rowMenuContainer:hover, .rowMenuContainer.active{
     background: #f8901c;
 }
@@ -452,3 +449,135 @@ main{
     font-size: 18px;
     background: #faf9fb;
 }
+
+
+/* Dish Container */
+
+.dishItemContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.itemCard{
+    width: 160px;
+    height: 180px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+
+}
+
+.isFav{
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    transition: 0.5s;
+}
+
+.isFav .MuiSvgIcon-root{
+    font-size: 18px;
+    color: #ff0008;
+}
+.isFav.active .MuiSvgIcon-root{
+    color: #ff0008;
+    filter: drop-shadow(0px 0px 8px #ff0000);
+}
+.itemCard .imgBox{
+    width: 100px;
+    height: 100px;
+    border-radius: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: absolute;
+    top: -10px;
+}
+.itemCard .imgBox img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.itemImg{
+    position: absolute;
+    top: 0;
+    width: 60px;
+}
+.itemContent{
+    background: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    padding: 10px;
+    padding-top: 50px;
+    width: 100%;
+}
+.itemContent h3 {
+    font-size: 16px;
+}
+
+.itemContent .bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.itemContent .bottom .rating .MuiSvgIcon-root{
+    font-size: 16px;
+}
+.orange{
+    color: #f8901c !important;
+}
+.gray{
+    color: #373848 !important;
+}
+.itemContent .bottom .price{
+    font-size: 16px;
+}
+.itemContent .bottom .price span{
+    color: #f8901c;
+    font-size: 12px;
+}
+
+.itemContent .addToCart{
+    background: #f8901c;
+    height: 25px;
+    height: 25px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+
+.itemContent .addToCart .MuiSvgIcon-root{
+    color: #faf9fb;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
